@@ -21,3 +21,30 @@ alert("Add:" + add(number1, number2));
 alert("Subtract:" + subtract(number1, number2));
 alert("Multiply:" + multiply(number1, number2));
 alert("Divide:" + divide(number1, number2));
+
+
+
+
+// BMI Calculator
+var height = parseFloat( prompt("How tall are you? (inch)"));
+var weight = parseFloat( prompt("How much do you weigh? (pound)"));
+
+var heightConverter = function(height){
+	return (height * .0254).toPrecision(4);
+
+};
+
+var weightConverter = function(poundWeight){
+	return (poundWeight * .45).toPrecision(4);
+};
+
+var BMI = function(mHeight, kgWeight){
+	return (kgWeight/(mHeight * mHeight)).toPrecision(4);
+};
+
+
+alert(heightConverter(height) + "m");
+alert(weightConverter(weight) + "kg");
+
+
+alert("Your BMI is " + BMI(heightConverter(height), weightConverter(weight)) + ".");
